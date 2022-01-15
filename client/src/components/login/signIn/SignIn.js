@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from 'react-redux';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { auth } from '../FireBaseConfig';
 import './SignIn.css';
@@ -11,8 +11,10 @@ const SignUp = ({ setUser }) => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  const login = async () => {
+  const login = async (e) => {
+    e.preventDefault();
         try{
             signInWithEmailAndPassword(auth, userName, password)
             .then((userCredential) => {
@@ -21,6 +23,7 @@ const SignUp = ({ setUser }) => {
                 const displayName = userCredential.user.displayName;
                 dispatch({ type: 'AUTH', data: { result, token, displayName } });
                 setUser(true);
+                navigate('/employees');
             })
             .catch((error) => alert(error.message));
         }catch(error){
