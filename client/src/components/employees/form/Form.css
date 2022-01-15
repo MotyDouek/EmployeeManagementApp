@@ -1,0 +1,44 @@
+label.addWorkerForm {
+  color: #6498fe;
+}
+
+input.addWorkerForm {
+  width: 90%;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #6498fe;
+}
+
+button.addWorkerForm {
+  color: white;
+  background-color: #6498fe;
+  border: none;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 90%;
+}
+
+div.addWorkerForm {
+  position: relative;
+  margin: 10px;
+  border-style: solid;
+  border-radius: 15px;
+}
+
+div.insideForm {
+  margin: 5px;
+}
+
+div.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+}
+
+h2.addWorkerForm {
+  margin: 5px;
+}

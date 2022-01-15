@@ -1,0 +1,13 @@
+div.employees {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.employeesCards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.employeesCard {
+  padding: 5px;
+}

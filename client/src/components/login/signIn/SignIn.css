@@ -1,0 +1,58 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-style: groove;
+}
+
+.title {
+  background-color: #6498fe;
+}
+
+.form {
+  background-color: white;
+  padding: 50px;
+}
+
+.login {
+  padding: 20px;
+}
+
+label.signIn {
+  color: #6498fe;
+}
+
+h1.signIn {
+  color: white;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+input.signIn {
+  padding: 2px;
+  width: 90%;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #6498fe;
+}
+
+button.signIn {
+  color: white;
+  background-color: #6498fe;
+  border: none;
+  font-weight: bold;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 90%;
+}

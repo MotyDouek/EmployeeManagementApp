@@ -1,0 +1,14 @@
+div.navBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 50px;
+  margin: 30px;
+  background-color: #6498fe;
+  border-radius: 15px;
+}
+
+h1.navBar {
+  color: white;
+}

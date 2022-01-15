@@ -1,0 +1,52 @@
+div.employee {
+  border-style: solid;
+}
+
+div.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+label.employeeName {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+label.employeeDate {
+  font-size: 15px;
+  color: #d3d3d3;
+}
+
+label.employeeTitle {
+  padding: 5px;
+  padding-bottom: 10px;
+  font-size: 15px;
+}
+
+hr.solid {
+  border-top: 20px solid #bbb;
+}
+
+div.solid {
+  background: #d3d3d3;
+  padding-top: 1px;
+  list-style: none;
+}
+
+div.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+div.editIcon {
+  padding: 5px;
+}
+
+div.deleteIcon {
+  padding: 5px;
+}
