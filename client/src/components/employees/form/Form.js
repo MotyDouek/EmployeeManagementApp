@@ -19,11 +19,13 @@ const Form = ({ currentId, setCurrentId }) => {
 
     const handelSubmit = (e) => {
         e.preventDefault();
-        if(currentId === 0) { //we are editing a post
+
+        if(currentId !== 0) { //we are editing a post
             dispatch(updateWorker(currentId, workerData));
         } else { //we are not editing a post
             dispatch(createWorker(workerData));
         }
+
         clear();
     }
 
@@ -47,10 +49,13 @@ const Form = ({ currentId, setCurrentId }) => {
                     <input className="addWorkerForm" type="text" value={workerData.title} name="title" onChange={(e) => setWorkerData({ ...workerData, title: e.target.value })} />
                     <div className="buttons">
                         <button type="submit">Submit</button>
-                        <button onClick={clear}>clear</button> 
                     </div>
                 </div>
             </form>
+            <div className="buttons">
+                <button onClick={clear}>clear</button> 
+            </div>
+           
         </div>
     )
 };

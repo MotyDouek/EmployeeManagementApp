@@ -4,13 +4,13 @@ import { Link } from 'react-router-dom';
 
 import './NavBar.css'
 
-const NavBar = () => {
+const NavBar = ({ user, setUser }) => {
 
-    let user = JSON.parse(localStorage.getItem('profile'));
     const dispatch = useDispatch();
+    
     const logout = () => {
         dispatch({ type: 'LOGOUT' });
-        user = null;
+        setUser(false);
       };
 
     return (
@@ -18,7 +18,7 @@ const NavBar = () => {
             <h1 className="navBar">
                Employee Management App 
             </h1>
-            {user ? <Link to="/login"><button onClick={logout}> Sign Out </button></Link>  : null}
+            {user && <Link to="/login"><button onClick={logout}> Sign Out </button></Link>}
         </div>
     )
 };

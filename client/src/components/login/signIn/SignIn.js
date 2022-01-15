@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { auth } from '../FireBaseConfig';
 import './SignIn.css';
 
-const SignUp = () => {
+const SignUp = ({ setUser }) => {
 
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
@@ -20,10 +20,12 @@ const SignUp = () => {
                 const token = userCredential.user.accessToken;
                 const displayName = userCredential.user.displayName;
                 dispatch({ type: 'AUTH', data: { result, token, displayName } });
+                setUser(true);
             })
             .catch((error) => alert(error.message));
         }catch(error){
             alert(error.message);
+            setUser(false);
         }
     }
 

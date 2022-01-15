@@ -9,42 +9,23 @@ import NavBar from './components/navBar/NavBar';
 
 const App = () => {
 
-  const user = JSON.parse(localStorage.getItem('profile'));
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
 
-  // const dispatch = useDispatch();
-  // const userAuth = useSelector((state) => state);
-  // const [user, setUser] = useState(false);
-  // console.log(user);
-  // //console.log(testt.auth.authData.result);
+  console.log(user)
 
-  // useEffect(() => {
-  //   if(JSON.parse(localStorage.getItem('profile'))) {
-  //     const localData = JSON.parse(localStorage.getItem('profile'));
-  //     const result = localData.registered;
-  //     const token = localData.accessToken;
-  //     const displayName = localData.displayName;
-  //     dispatch({ type: 'AUTH', data: { result, token, displayName } });
-  //   } else {
-  //     const result = false;
-  //     const token = '';
-  //     const displayName = '';
-  //     dispatch({ type: 'AUTH', data: { result, token, displayName } });
-  //   }
-  // },[dispatch]);
-
-  // useEffect(() => {
-  //   if(userAuth.auth.authData){
-  //     setUser(userAuth.auth.authData.result);
-  //   }
-  // },[userAuth]);
+  useEffect(() => {
+    if(JSON.parse(localStorage.getItem('profile'))) {
+      setUser(true);
+    }
+  },[]);
 
 
   return (
       <BrowserRouter>
-          <NavBar />
+          <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/" exact element={(user ? <Navigate replace to="/employees" /> : <Navigate replace to="/login" />)} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/login" element={<Login setUser={setUser} />} />
             <Route path="/signup" element={<SignUp />} />
             <Route path="/employees" element={(user ? <Employees /> : <Navigate replace to="/login" />)} />
           </Routes>

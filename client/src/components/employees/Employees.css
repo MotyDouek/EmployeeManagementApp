@@ -1,6 +1,11 @@
 div.employees {
   display: flex;
   justify-content: space-between;
+  padding-left: 30px;
+}
+
+div.employeesForm {
+  padding-right: 30px;
 }
 
 div.employeesCards {

@@ -11,10 +11,10 @@ const workersReducer = (workers = [], action) => {
             return [...workers, action.payload];
 
         case actionType.UPDATE:
-            return workers.map((worker) => worker._id !== action.payload._id ? action.payload : worker);
+            return workers.map((worker) => (worker._id === action.payload._id ? action.payload : worker));
 
         case actionType.DELETE:
-            return workers.filter((worker) => worker._id === action.payload._id ? action.payload : worker);
+            return workers.filter((worker) => worker._id !== action.payload);
             
         default:
             return workers;

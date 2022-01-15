@@ -29,7 +29,7 @@ const Employees = () => {
                 </div>
             </div>
             
-            <div>
+            <div className='employeesForm'>
                 <Form currentId={currentId} setCurrentId={setCurrentId} />
             </div>
         </div>
